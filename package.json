@@ -1,8 +1,7 @@
 {
-  "name": "project_hexlet",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@petrzyzev/project_hexlet",
+  "version": "1.0.1",
+  "description": "brain games of Hexlet",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
@@ -14,6 +13,9 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "Hexlet", "Brain Games"
+  ],
   "author": "petr_zyuzev",
   "license": "ISC",
   "devDependencies": {
@@ -22,5 +24,7 @@
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
 }
