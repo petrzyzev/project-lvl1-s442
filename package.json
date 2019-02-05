@@ -1,6 +1,6 @@
 {
   "name": "@petrzyzev/project_hexlet",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "brain games of Hexlet",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"

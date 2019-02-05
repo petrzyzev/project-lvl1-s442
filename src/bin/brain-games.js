@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import index from '../index';
+import sayHello from '..';
 
 console.log('Welcome to the Brain Games!');
-index();
+sayHello();
