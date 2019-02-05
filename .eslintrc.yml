@@ -3,12 +3,11 @@ plugins:
 
 env:
   node: true
-  brower: true
 
 parser: babel-eslint
 
 extends:
-  - 'airbnb-base'
+  - 'airbnb'
 
 rules:
   no-console: 0
