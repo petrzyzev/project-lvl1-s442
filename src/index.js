@@ -1,38 +1,37 @@
-#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-const sayHello = () => {
+const player = () => {
   const name = readlineSync.question('May I have your name?');
   console.log(`Hello, ${name}`);
   return name;
 };
 
+const sayHello = () => {
+  console.log('Welcome to the Brain Games!');
+  player();
+};
+
+const rounds = 3;
+const isEven = q => q % 2 === 0;
+
 const mapGame = () => {
+  console.log('Welcome to the Brain Games!');
   console.log('Answer "yes" if number even otherwise answer "no"');
-  const name = sayHello();
-  let questionNumber;
-  let answer;
-  const rounds = 3;
+  const name = player();
   for (let i = 0; i < rounds; i += 1) {
-    questionNumber = Math.floor(Math.random() * 100);
-    answer = readlineSync
-      .question(`Question: ${questionNumber}\nYour answer:`);
-    if (answer === 'yes') {
-      if (questionNumber % 2 !== 0) {
-        console.log(`'yes' is wrong answer ((.Correct answer was 'no'\nLet's try again, ${name}`);
-        return;
-      }
-      console.log('Correct!');
-    } else if (answer === 'no') {
-      if (questionNumber % 2 === 0) {
-        console.log(`'no' is wrong answer ((.Correct answer was 'yes'\nLet's try again, ${name}`);
-        return;
-      }
-      console.log('Correct!');
-    } else {
+    const question = Math.floor(Math.random() * 100);
+    const answer = readlineSync
+      .question(`Question: ${question}\nYour answer:`);
+    const truth = isEven(question) ? 'yes' : 'no';
+    if (answer !== 'yes' && answer !== 'no') {
       console.log('Incorrect input. Try again');
       return;
     }
+    if (answer !== truth) {
+      console.log(`${answer} is wrong answer ((. Correct answer is ${truth}. Let's try again, ${name}!`);
+      return;
+    }
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${name}!`);
 };
