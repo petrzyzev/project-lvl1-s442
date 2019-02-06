@@ -1,29 +1,26 @@
 import readlineSync from 'readline-sync';
 
+
+const rounds = 3;
+const ans = question => readlineSync.question(`Question: ${question}\nYour answer:`);
 const player = () => {
   const name = readlineSync.question('May I have your name?');
   console.log(`Hello, ${name}`);
   return name;
 };
 
-const sayHello = () => {
-  console.log('Welcome to the Brain Games!');
-  player();
-};
 
-const rounds = 3;
-const isEven = q => q % 2 === 0;
-
-const mapGame = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no"');
+export default (rules, ques, trueAns, predicate) => {
+  console.log(rules);
   const name = player();
+  if (!ques) {
+    return;
+  }
   for (let i = 0; i < rounds; i += 1) {
-    const question = Math.floor(Math.random() * 100);
-    const answer = readlineSync
-      .question(`Question: ${question}\nYour answer:`);
-    const truth = isEven(question) ? 'yes' : 'no';
-    if (answer !== 'yes' && answer !== 'no') {
+    const question = ques();
+    const answer = ans(question);
+    const truth = trueAns(question);
+    if (predicate(answer)) {
       console.log('Incorrect input. Try again');
       return;
     }
@@ -35,5 +32,3 @@ const mapGame = () => {
   }
   console.log(`Congratulations, ${name}!`);
 };
-
-export { sayHello, mapGame };
