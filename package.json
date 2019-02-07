@@ -1,5 +1,5 @@
 {
-  "name": "@petrzyzevproject_hexlet",
+  "name": "@petrzyzev/project_hexlet",
   "version": "1.2.2",
   "description": "brain games of Hexlet",
   "bin": {
