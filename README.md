@@ -15,3 +15,7 @@ $ brain-even
 ```sh
 $ brain-calc
 ```
+## Play the "brain-gcd"
+```sh
+$ brain-gcd
+```
