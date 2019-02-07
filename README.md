@@ -7,10 +7,6 @@
 ```sh
 $ make install -g @petrzyzev/project_hexlet
 ```
-## Play the "brain-games"
-```sh
-$ brain-games
-```
 ## Play the "brain-even"
 ```sh
 $ brain-even
