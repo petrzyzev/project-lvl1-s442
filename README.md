@@ -23,3 +23,7 @@ $ brain-gcd
 ```sh
 $ brain-progression
 ```
+## Play the "brain-prime"
+```sh
+$ brain-prime
+```
