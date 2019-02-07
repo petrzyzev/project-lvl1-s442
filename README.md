@@ -19,3 +19,7 @@ $ brain-calc
 ```sh
 $ brain-gcd
 ```
+## Play the "brain-progression"
+```sh
+$ brain-progression
+```
