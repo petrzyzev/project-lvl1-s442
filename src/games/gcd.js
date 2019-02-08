@@ -1,23 +1,23 @@
 import startGame from '..';
 import generateNum from '../utils';
 
-const commonDivisor = (first, second, divider) => first % divider === 0 && second % divider === 0;
 const description = 'Find the greatest common divisor of given numbers';
 const dividers = [];
-const fidingCommonDivider = (first, second) => {
-  const maxDivider = first > second ? second : first;
+const findCommonDivider = (firstNum, secondNum) => {
+  const commonDivisor = (first, second, divider) => first % divider === 0 && second % divider === 0;
+  const maxDivider = firstNum > secondNum ? secondNum : firstNum;
   for (let i = 1; i <= maxDivider; i += 1) {
-    if (commonDivisor(first, second, i)) {
+    if (commonDivisor(firstNum, secondNum, i)) {
       dividers.push(i);
     }
   }
   return dividers[dividers.length - 1];
 };
 const query = () => {
-  const first = generateNum(50);
-  const second = generateNum(50);
-  const question = `${first} ${second}`;
-  const divider = fidingCommonDivider(first, second).toString();
+  const firstNum = generateNum(50);
+  const secondNum = generateNum(50);
+  const question = `${firstNum} ${secondNum}`;
+  const divider = findCommonDivider(firstNum, secondNum).toString();
   return [question, divider];
 };
 

@@ -3,7 +3,7 @@ import generateNum from '../utils';
 
 const operators = ['+', '-', '*'];
 const description = 'What is the result of the expression?';
-const trueAnswer = (number) => {
+const findOperationResult = (number) => {
   switch (number[1]) {
     case '+':
       return (Number(number[0]) + Number(number[2])).toString();
@@ -14,12 +14,12 @@ const trueAnswer = (number) => {
   }
 };
 const query = () => {
-  const first = generateNum(10);
-  const second = generateNum(10);
+  const firstNum = generateNum(10);
+  const secondNum = generateNum(10);
   const operator = operators[generateNum(3)];
-  const question = `${first} ${operator} ${second}`;
-  const truth = trueAnswer([first, operator, second]);
-  return [question, truth];
+  const question = `${firstNum} ${operator} ${secondNum}`;
+  const trueAnswer = findOperationResult([firstNum, operator, secondNum]);
+  return [question, trueAnswer];
 };
 
 export default () => {

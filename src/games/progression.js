@@ -12,10 +12,10 @@ const query = () => {
     progression.push(firstNum + difference * i);
   }
   const hiddenElementPosition = generateNum(progressLength - 1);
-  const truth = progression[hiddenElementPosition].toString();
+  const trueAnswer = progression[hiddenElementPosition].toString();
   progression[hiddenElementPosition] = '..';
   const question = progression.join(' ');
-  return [question, truth];
+  return [question, trueAnswer];
 };
 
 export default () => {
